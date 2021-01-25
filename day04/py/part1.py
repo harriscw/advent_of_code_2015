@@ -8,8 +8,8 @@ cnt=0
 stoploop=False
 while stoploop==False:
 	cnt+=1
-	mystring=secretkey+str(cnt)
-	myhash=hashlib.md5(mystring.encode("utf")).hexdigest()
+	mystring=secretkey+str(cnt) #iteratively generate new string
+	myhash=hashlib.md5(mystring.encode("utf")).hexdigest() #get the md5 hash
 	if myhash[0:5]=="00000":
 		stoploop=True
 
