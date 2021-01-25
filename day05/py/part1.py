@@ -5,7 +5,7 @@ import sys
 text_file = open("../input.txt", "r")
 lines =[v.strip("\n") for v in text_file.readlines()]
 
-#print(lines)
+#lines=["ugknbfddgicrmopn","aaa","jchzalrnumimnmhp","haegwjzuvuyypxyu","dvszwmarrgswjxmb"]
 
 doubles = re.compile(r"(.)\1") #regex for repeating characters
 badstrings = re.compile('ab|cd|pq|xy') #regex for forbidden strings
@@ -25,7 +25,8 @@ for line in lines:
 	# Does it have a forbidden string
 	hasbadstring=badstrings.search(line)!=None
 	
-	if vowelcnt>=3 and hasdoubles==False and hasbadstring==False:
+	#print(line,vowelcnt,hasdoubles,hasbadstring)
+	if vowelcnt>=3 and hasdoubles==True and hasbadstring==False:
 		nicestrings+=1
 
 print("Keepers:",nicestrings)
