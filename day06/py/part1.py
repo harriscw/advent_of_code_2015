@@ -9,7 +9,9 @@ startsec = time.time()
 #Read data 
 text_file = open("../input.txt", "r")
 lines =[v.strip("\n") for v in text_file.readlines()]
-
+#lines=["turn on 0,0 through 999,999"]
+#lines=["toggle 0,0 through 999,0"]
+#lines=["turn off 499,499 through 500,500"]
 #print(lines)
 
 instrux=[] #get a list of lists with semi parsed instructions
@@ -31,20 +33,18 @@ for line in lines:
 
 mygrid = np.zeros((1000,1000),dtype=int) #create a grid of lights turned off
 
-#mygrid[1,1]=1
-
 for instruction in instrux: #execute the instructions
 	if instruction[0]=="on":
-		for row in range(instruction[1],instruction[2]): #switch on
-			for col in range(instruction[3],instruction[4]):
+		for row in range(instruction[1],instruction[2]+1): #switch on
+			for col in range(instruction[3],instruction[4]+1):
 				mygrid[row,col]=1
-	if instruction[1]=="off":
-		for row in range(instruction[1],instruction[2]): #switch off
-			for col in range(instruction[3],instruction[4]):
+	elif instruction[0]=="off":
+		for row in range(instruction[1],instruction[2]+1): #switch off
+			for col in range(instruction[3],instruction[4]+1):
 				mygrid[row,col]=0
 	else:
-		for row in range(instruction[1],instruction[2]): #toggle
-			for col in range(instruction[3],instruction[4]):
+		for row in range(instruction[1],instruction[2]+1): #toggle
+			for col in range(instruction[3],instruction[4]+1):
 				mygrid[row,col]=abs(1-mygrid[row,col])
 		
 
