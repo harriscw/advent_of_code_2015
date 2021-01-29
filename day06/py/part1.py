@@ -29,24 +29,21 @@ for line in lines:
 
 #print(instrux)
 
-mygrid = np.zeros((1000,1000),dtype=int)
-
-#print(mygrid)
+mygrid = np.zeros((1000,1000),dtype=int) #create a grid of lights turned off
 
 #mygrid[1,1]=1
-#print(mygrid)
 
-for instruction in instrux:
+for instruction in instrux: #execute the instructions
 	if instruction[0]=="on":
-		for row in range(instruction[1],instruction[2]):
+		for row in range(instruction[1],instruction[2]): #switch on
 			for col in range(instruction[3],instruction[4]):
 				mygrid[row,col]=1
 	if instruction[1]=="off":
-		for row in range(instruction[1],instruction[2]):
+		for row in range(instruction[1],instruction[2]): #switch off
 			for col in range(instruction[3],instruction[4]):
 				mygrid[row,col]=0
 	else:
-		for row in range(instruction[1],instruction[2]):
+		for row in range(instruction[1],instruction[2]): #toggle
 			for col in range(instruction[3],instruction[4]):
 				mygrid[row,col]=abs(1-mygrid[row,col])
 		
