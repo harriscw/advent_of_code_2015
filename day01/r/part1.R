@@ -27,7 +27,16 @@ for(i in 1:nchar(input)){
               ))
 }
 
+
+
 png(filename="part1.png")
 plot(myout$x,myout$y,xlab="Step",ylab="Floor",cex=.1)
+
+text(head(myout[myout$y==-1,"x"],1)+250,0,as.character(head(myout[myout$y==-1,"x"],1)))
+abline(v=head(myout[myout$y==-1,"x"],1))
+
+text(tail(myout[,"x"],1)+150,tail(myout[,"y"],1),as.character(tail(myout[,"y"],1)))
+abline(v=tail(myout[,"x"],1))
+
 dev.off()
 
