@@ -11,10 +11,23 @@ for(i in 1:nchar(input)){
 write.table(myvec,file="input.csv",row.names = FALSE,col.names=FALSE,sep=",")
 
 cnt=0 #I counted to make sure I didn't make an error somewhere (because scratch wasn't getting the right answer)
+x=0
+myout=data.frame(x=0,y=0)
 for(i in 1:nchar(input)){
   if(substr(input,i,i)=="("){
     cnt=cnt+1
   }else{
     cnt=cnt-1
   }
+  x=x+1
+  myout=rbind(myout,
+              data.frame(
+                x=x,
+                y=cnt
+              ))
 }
+
+png(filename="part1.png")
+plot(myout$x,myout$y,xlab="Step",ylab="Floor",cex=.1)
+dev.off()
+
