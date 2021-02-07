@@ -1,0 +1,1 @@
+For **part1_long.gif** I rendered the gif at 8000+ frames which fully took 30min.  For reference the other two gifs are rendered at 200 frames.  The output file was super slow so I used a random website to speed it up.
