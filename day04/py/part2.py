@@ -1,4 +1,7 @@
 import hashlib
+import time
+
+startsec = time.time()
 
 secretkey="ckczppom"
 #secretkey="abcdef"
@@ -13,6 +16,7 @@ while stoploop==False:
 	if myhash[0:6]=="000000":
 		stoploop=True
 
+print("Run Time:",round(time.time()-startsec,5))
 print(mystring)
 print(myhash)
 print("Final Answer:",cnt)
