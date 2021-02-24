@@ -13,10 +13,10 @@ for thelength in range(1,len(lines)+1): #iterate over different possible lengths
 
 print("Final Answer:",len(outlist)) #Part 1 answer
 
-themin=min([len(x) for x in outlist])
+themin=min([len(x) for x in outlist]) #find the minimum length
 acc=0
-for sublist in outlist:
-    if len(sublist)==themin:
+for sublist in outlist: #iterate over all possible solutions from part 1
+    if len(sublist)==themin: #if it has the minumum length then add 1
         acc+=1
 
 print("Final Answer:",acc) #Part 2 answer
