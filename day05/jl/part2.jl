@@ -12,6 +12,7 @@ for (index, line) in enumerate(ret)
 	for i=3:length(theline)
 		if theline[i]==theline[i-2]
 			global cond2=true
+			break
 		end
 	end
 
