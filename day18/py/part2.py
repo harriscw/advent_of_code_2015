@@ -20,10 +20,7 @@ step=0
 newgrid = grid
 while step<100: #do 100 steps
     thisgrid=newgrid #define the current grid we'll iterate over
-    print("Step:",step)
-    #for row in thisgrid:
-    #    print(row)
-    
+    print("Step:",step)    
     turnoff=[]
     turnon=[]
     for i,row in enumerate(thisgrid): #iterate over each point in the grid
