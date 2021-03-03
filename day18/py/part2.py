@@ -12,7 +12,7 @@ def findNeighbors(grid, x, y): #stolen verbatim: https://stackoverflow.com/quest
 
 #set the corners to be initially on
 grid[0][0]="#"
-grid[0][len(grid)-1]="#"
+grid[0][len(grid)-1]="#" #ugh python will give a list of 1000 objects length of 1000 though you can only index from 0 to 9
 grid[len(grid)-1][0]="#"
 grid[len(grid)-1][len(grid)-1]="#"
 

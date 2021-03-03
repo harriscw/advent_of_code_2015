@@ -15,7 +15,7 @@ newgrid = grid
 while step<100: #do 100 steps
     thisgrid=newgrid #define the current grid we'll iterate over
     print("Step:",step)
-    turnoff=[]
+    turnoff=[] #setting turnoff=turnon=[] made it so turnoff and turnon were always equal.  Why??
     turnon=[]
     for i,row in enumerate(thisgrid): #iterate over each point in the grid
         for j,col in enumerate(thisgrid[i]):
