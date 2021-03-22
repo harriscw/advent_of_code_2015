@@ -18,13 +18,12 @@ def get_factors(n):  #https://stackoverflow.com/questions/6800193/what-is-the-mo
 # print(get_factors(8))
 
 house=0
-seen=False
-while seen==False:
+while True:
     house+=10
     housesum=get_factors(house)
     #print(house,housesum)
     if housesum>thenum:
-        seen=True
+        break
     # if house % 1000==0:
     #     print(house,housesum)
 

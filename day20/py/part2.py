@@ -18,18 +18,16 @@ thenum=34000000
 
 def get_factors(n):  #https://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
     return sum(set(reduce(list.__add__, 
-                ([11*x for x in [i, n//i] if 50*x>=n] for i in range(1, int(n**0.5) + 1) if n % i == 0) 
-                )))
+                ([11*x for x in [i, n//i] if 50*x>=n] for i in range(1, int(n**0.5) + 1) if n % i == 0) )))
 
 # print(get_factors(12))
 # sys.exit()
 house=786240 #I figure its gotta be more than the answer for part 1 since we're losing factors, right?
-seen=False
-while seen==False:
+while True:
     house+=10
     housesum=get_factors(house)
     if housesum>thenum:
-        seen=True
+        break
     if house % 1000==0:
         print(house,housesum)
 
