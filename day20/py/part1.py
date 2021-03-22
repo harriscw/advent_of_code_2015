@@ -6,7 +6,7 @@ startsec = time.time()
 #thenum=9
 thenum=34000000
 
-#I tried this but it was slow"
+#I tried this but it was slow:
 #https://www.programiz.com/python-programming/examples/factor-number
 # I also tried starting at later houses like house 1000000 and searching from there
 # I also started searching by every 10 houses feeling like that had more factors than numbers ending in 7, 3, etc
