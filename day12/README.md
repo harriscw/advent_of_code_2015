@@ -18,4 +18,4 @@ def n(j):
 print(n(loads(input())))
 ```
 
-## My super kludge-y appraoch
+## My super kludge-y approach
