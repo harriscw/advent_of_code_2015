@@ -30,5 +30,5 @@ i.e.
     - So I kept a bracket count as I went!  -1 for `}`, +1 for `{`.
     - Once I hit a `{` where the bracket count was 0 then that was the opening bracket
 3. then find the closing bracket `}` after the `:"red` using a similar approach
-4. now you have the indexes of the brackets `{}` that contain the red.  I just replaced text betwen those positions with `X`'s 
+4. now you have the indexes of the brackets `{}` that contain the red.  I just replaced text between those positions with `X`'s 
     - This created a cool redacted-esque vibe
