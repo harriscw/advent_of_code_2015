@@ -28,7 +28,7 @@ i.e.
 2. from there look backwards to find the first *unmatched* `{`
     - For example: `abc { defg {hijk} lmno :"red"...}` is contained in the dictionary opened by the leftmost `{` not the first `{` encountered when working backwards.
     - So I kept a bracket count as I went!  +1 for `{`, -1 for `}`.
-    - Once I hit a `{` whenre the bracket count was 0 then that was the opening bracket
+    - Once I hit a `{` where the bracket count was 0 then that was the opening bracket
 3. find the closing bracket `}` after the `:"red` using a similar approach
 4. now you have the indexes of the brackets `{}` that contain the red.  I just replaced text betwen those positions with `X`'s 
     - This created a cool redacted-esque vibe
