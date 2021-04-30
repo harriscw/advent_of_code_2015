@@ -32,3 +32,7 @@ i.e.
 3. then find the closing bracket `}` after the `:"red` using a similar approach
 4. now you have the indexes of the brackets `{}` that contain the red.  I just replaced text between those positions with `X`'s 
     - This created a cool redacted-esque vibe
+
+
+![image](https://user-images.githubusercontent.com/36176570/116751470-eb330c80-a9b8-11eb-980b-de9cdd545726.png)
+
