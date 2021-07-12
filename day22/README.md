@@ -3,7 +3,7 @@
 - In this approach I start by searching all combinations of size 1.
 - If there is no result (player win/lose, mana overspend, etc) then I append each of the 5 spells to be searched in round 2
 - for example: [sheild,recharge], [sheild,magic missle], [sheild,drain], etc
-- This does automatic pruning relative to my first approach.
+- The key idea is that this does automatic pruning relative to my first approach - I don't continue to check paths that had a result somewhere previously
 - Unfortunately its still too slow
 - Ultimately what I did was only search a single plausible starting point to try to get a win
 - For example [sheild,recharge,poison]
