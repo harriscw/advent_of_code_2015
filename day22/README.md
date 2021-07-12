@@ -4,10 +4,12 @@
 - If there is no result (player win/lose, mana overspend, etc) then I append each of the 5 spells to be searched in round 2
 - for example: [sheild,recharge], [sheild,magic missle], [sheild,drain], etc
 - The key idea is that this does automatic pruning relative to my first approach - I don't continue to check paths that had a result somewhere previously
-- Unfortunately its still too slow
+- Unfortunately this was still too slow
 - Ultimately what I did was only search a single plausible starting point to try to get a win
 - For example [sheild,recharge,poison]
-- To speed this up I only continued searching a move combo if the difference in player and boss HP was <35
-- Eventually I got a win and an associated mana value
-- I then searched combos started with each individual spell limiting to combos with total mana spent <= the mana value for the win
+- To speed this up I only continued searching a move combo if the difference in player and boss HP was < some number, e.g. 35
+- If things got too far apart then the boss was gonna win eventually
+- Eventually I got a win and an associated value for total mana spent
+- I then started with each individual spell and built up moveset combos limiting to those combos with total mana spent <= the total mana value for the win I got
 - This sped things up enough to get the minimum value after 2-3min
+- Part 2 was even faster
