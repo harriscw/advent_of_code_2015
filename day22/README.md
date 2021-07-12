@@ -8,12 +8,13 @@
 # More Successful approaches
 
 - In my ultimately successful approach I start by searching all combinations of size 1.
-- If there is no result (player win/lose, mana overspend, etc) then I append each of the 5 spells to be searched in round 2
+- If there is no result (player win/lose, mana overspend, etc) then I create a move combo by appending each of the 5 spells.
 - For example: [sheild] -> [sheild,recharge], [sheild,magic missle], [sheild,drain], etc
+- I then go to round 2 and search all my move combos.  I repeat this to create gowing move combos, e.g. [sheild,drain,drain,poison,...]
 - The key idea is that this does automatic pruning relative to my first approach - I don't continue to check paths that already had a result somewhere previously
 - Unfortunately this was still too slow
 - What I did then was try to just find one single win.  I did this by only searching a single starting point that seemed pretty strong
-- ie [sheild,recharge,poison] ... immediately protect yourself and turn on all effects!
+- The starting point I used was [sheild,recharge,poison] ... immediately protect yourself and turn on all effects!
 - To speed this up I only continued searching a move combo if the difference in player and boss HP was < some number, e.g. 35
 - ie. if HPs got too far apart then the boss was probably gonna win
 - Eventually I found a winning combo and the associated value for total mana spent
