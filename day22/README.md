@@ -21,5 +21,9 @@
 - I then used this total mana spent value to help prune further combos - if total mana spent goes higher that that of my win then stop checking
 - Finally, I then started with each individual spell and built up moveset combos limiting to those combos with total mana spent <= the total mana value for the win I got
 - This sped things up enough to get the minimum value after 2-3min
+- Here's a sequence where minimum mana was spent for a win:
+  - 'poison', 'recharge', 'sheild', 'poison', 'recharge', 'sheild', 'poison', 'recharge', 'sheild', 'magic missle', 'poison'
 
-- Part 2 was a straightforward modification and ran even faster
+# Part 2
+
+- A straightforward modification to part 1 that ran even faster
