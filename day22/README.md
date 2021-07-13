@@ -1,7 +1,7 @@
 # Unsuccessful approaches
 
 - In my first attempts I searched all combinations of size 1, size 2, size 3,...
-- This became to slow to run around size 12 or so
+- This became too slow to run around size 12 or so
 - I tried some things like using a generator instead of a list of lists, filtering out certain combos, etc.
 - Unfortunately this still didn't work - sometimes filtering made things take longer!
 
