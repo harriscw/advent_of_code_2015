@@ -1,4 +1,7 @@
+rm(list=ls())
 library(gganimate)
+library(gifski)
+library(ggimage)
 
 input = read.csv("../py/input.txt",header=FALSE,stringsAsFactors = FALSE)
 
@@ -20,33 +23,65 @@ for(i in 1:length(myvec)){
              data.frame(x=i,y=acc))
 }
 
-
-library(gganimate)
-library(gifski)
-
 df$n = 1:nrow(df)
+df$image="santa.jpg"
+
+# x axis is time
+
 p = ggplot(df, aes(x=x, y=y)) +
   geom_point() +
-  transition_time(n) +
-  shadow_mark(past = T, future=F, alpha=0.3)
+  theme_minimal() +
+  shadow_wake(wake_length = 0.1, alpha = FALSE) +
+  transition_manual(n) 
 
 
 animate(
   plot = p, 
-  nframes = nrow(df)/5, 
-  fps = 50, 
-  end_pause = 8
+  duration=10,
+  end_pause = 30
 )
 
+anim_save("gif1.gif", animation = last_animation())
 
-p = ggplot(df, aes(x=0, y=y, label=y)) +
+
+# now with image
+
+
+p = ggplot(df, aes(x=x, y=y, image=image)) +
   geom_point() +
-  geom_text(hjust=0, vjust=1) +
-  transition_time(n)
+  geom_image() +
+  theme_minimal() +
+  transition_manual(n) 
+
 
 animate(
   plot = p, 
-  nframes = nrow(df)/40, 
-  fps = 50, 
-  end_pause = 8
+  duration=10,
+  end_pause = 30
 )
+
+anim_save("gif2.gif", animation = last_animation())
+
+# X axis is a constant
+
+# df = head(df,1000)
+
+p = ggplot(df, aes(x=0, y=y, label=y,image=image)) +
+  geom_point() +
+  geom_image(size=.1) +
+  geom_text(hjust=0, vjust=1, position = position_nudge(x=.25),size=15) +
+  theme_minimal() +
+  ylab("Floor") +
+  scale_x_continuous(limits = c(-.5, 1)) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
+  transition_manual(n) 
+
+animate(
+  plot = p,
+  duration=10,
+  end_pause = 30
+)
+
+anim_save("gif3.gif", animation = last_animation())
