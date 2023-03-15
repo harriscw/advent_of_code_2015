@@ -31,14 +31,14 @@ df$image="santa.jpg"
 p = ggplot(df, aes(x=x, y=y)) +
   geom_point() +
   theme_minimal() +
-  shadow_wake(wake_length = 0.1, alpha = FALSE) +
-  transition_manual(n) 
-
+  transition_time(n) +
+  shadow_mark(past = T, future=F, alpha=0.3)
 
 animate(
   plot = p, 
   duration=10,
-  end_pause = 30
+  end_pause = 30,
+  nframes = nrow(df)/10 #can sample frames here to speed up.  But we wont get the right answer at the end if we don't include all frames
 )
 
 anim_save("gif1.gif", animation = last_animation())
